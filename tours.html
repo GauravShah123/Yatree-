@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose your tour</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+</head>
+
+<body>
+    <div class="image">
+        <div class="image-overlay">
+        </div>
+    </div>
+
+    <div class="tour-content">
+        <h1>CHOOSE YOUR TOUR</h1>
+        <h3 class="desc">The tour you choose will determine your route through India.</h3>
+        <div class="cards-thin">
+            <div class="card-thin card-active tour-card-2 custom-tour"><b>Custom Tour</b></div>
+            <div class="card-thin card-active tour-card-1"><b>Union territories</b></div>
+
+            <div class="card-thin card-inactive"><span class="lock"><img src="https://static.thenounproject.com/png/10982-200.png" alt="locked" class="lock-img"></span> <span class="card-thin-text"> Lakes of India</span> </div>
+            <div class="card-thin card-inactive"><span class="lock"><img src="https://static.thenounproject.com/png/10982-200.png" alt="locked" class="lock-img"></span> <span class="card-thin-text"> Metropolitan cities</span> </div>
+            <div class="card-thin card-inactive"><span class="lock"><img src="https://static.thenounproject.com/png/10982-200.png" alt="locked" class="lock-img"></span> <span class="card-thin-text"> Rivers of India</span></div>
+            <div class="card-thin card-inactive"><span class="lock"><img src="https://static.thenounproject.com/png/10982-200.png" alt="locked" class="lock-img"></span> <span class="card-thin-text"> Monuments of India</span></div>
+            <div class="card-thin card-inactive"><span class="lock"><img src="https://static.thenounproject.com/png/10982-200.png" alt="locked" class="lock-img"></span> <span class="card-thin-text"> The Northern Plains</span></div>
+            <div class="card-thin card-inactive"><span class="lock"><img src="https://static.thenounproject.com/png/10982-200.png" alt="locked" class="lock-img"></span> <span class="card-thin-text"> The Deccan Plateau</span></div>
+            <div class="card-thin card-inactive"><span class="lock"><img src="https://static.thenounproject.com/png/10982-200.png" alt="locked" class="lock-img"></span> <span class="card-thin-text"> Coastal Tour</span></div>
+            <div class="card-thin card-inactive"><span class="lock"><img src="https://static.thenounproject.com/png/10982-200.png" alt="locked" class="lock-img"></span> <span class="card-thin-text"> The Ghats</span></div>
+            <div class="card-thin card-inactive"><span class="lock"><img src="https://static.thenounproject.com/png/10982-200.png" alt="locked" class="lock-img"></span> <span class="card-thin-text"> Historical Sites</span></div>
+            <div class="card-thin card-inactive"><span class="lock"><img src="https://static.thenounproject.com/png/10982-200.png" alt="locked" class="lock-img"></span> <span class="card-thin-text"> Hill stations</span> </div>
+            <div class="card-thin card-inactive"><span class="lock"><img src="https://static.thenounproject.com/png/10982-200.png" alt="locked" class="lock-img"></span> <span class="card-thin-text"> Pilgrimage sites</span> </div>
+        </div>
+    </div>
+    <h3 class="desc"><b>Note:</b> Some stations are locked as this is the demo version. The full version of the app is still under construction. Thank you for your understanding.</h3>
+
+    <img src="Logo.svg" alt="Logo" class="logo">
+
+    <style>
+        .image {
+            background-image: url(https://images.unsplash.com/photo-1548013146-72479768bada?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1955&q=80);
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            z-index: -1;
+        }
+        
+        h1 {
+            font-family: 'Samarkan ', sans-serif;
+            color: rgb(255, 187, 180);
+        }
+        
+        .image-overlay {
+            background: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+        }
+        
+        .tour-content {
+            color: white;
+        }
+        
+        .card-thin-text {
+            text-align: center;
+            position: absolute;
+            right: 0%;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .lock-img {
+            height: 25px;
+        }
+        
+        .desc {
+            color: white;
+        }
+        
+        .card-active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @media only screen and (min-width: 1000px) {
+            .cards-thin {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        var tour = document.querySelector(".tour-card-1")
+        tour.addEventListener("click", tour1)
+
+        function tour1() {
+            window.location.href = "nextstop.html";
+        }
+        var tour1 = document.querySelector(".tour-card-2")
+        tour1.addEventListener("click", tour2)
+
+        function tour2() {
+            window.location.href = "custom-tour.html";
+        }
+    </script>
+
+</body>
+
+</html>
