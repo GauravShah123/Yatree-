@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher's Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+</head>
+
+<body>
+    <img src="bg.svg" alt="bg" class="bg">
+    <h1>Teacher's Dashboard</h1>
+
+    <div class="cards-with-pictures">
+        <div class="card-wp" onclick="window.location.href = 'quiz1.html'">
+            <img src="https://wpmanageninja.com/wp-content/uploads/2020/05/FT.png" alt="Card Image" class="card-img">
+            <h3 class="desc card-title">Create trivia</h3>
+            <h4>Create trivia questions for your students</h4>
+        </div>
+        <div class="card-wp" onclick="window.location.href = 'custom-tour.html'">
+            <img src="https://thumbs.dreamstime.com/b/india-map-location-pointer-marks-infographic-vector-template-isolated-white-background-195146878.jpg" alt="Card Image" class="card-img">
+            <h3 class="desc card-title">Select locations</h3>
+            <h4>Select locations for your students to visit</h4>
+        </div>
+        <div class="card-wp" onclick="window.location.href = 'virtual-tour.html'">
+            <img src="https://thumbs.dreamstime.com/z/interesting-facts-speech-bubble-icons-fun-fact-idea-label-banner-business-marketing-advertising-funny-question-logo-sign-157953662.jpg" alt="Card Image" class="card-img">
+            <h3 class="desc card-title">Add fun facts</h3>
+            <h4>Make learning fun through fun facts.</h4>
+        </div>
+        <div class="card-wp" onclick="window.location.href = 'virtual-tour.html'">
+            <img src="https://www.itu.int/itu-d/sites/statistics/wp-content/uploads/sites/11/2021/03/ICTprices.jpg" alt="Card Image" class="card-img">
+            <h3 class="desc card-title">Manage Students Statistics</h3>
+            <h4>See student performace</h4>
+        </div>
+        <div class="card-wp" onclick="window.location.href = 'virtual-tour.html'">
+            <img src="https://thumbs.dreamstime.com/b/electronic-library-poster-smartphone-books-storage-pile-publication-hardcover-trees-light-bulbs-celebration-flags-128427501.jpg" alt="Card Image" class="card-img">
+            <h3 class="desc card-title">My Library</h3>
+            <h4>See previously created lessons</h4>
+        </div>
+        <div class="card-wp" onclick="window.location.href = 'virtual-tour.html'">
+            <img src="https://365psd.com/images/istock/previews/9578/95785327-group-of-people-asking-for-help.jpg" alt="Card Image" class="card-img">
+            <h3 class="desc card-title">Teacher Resources</h3>
+            <h4>Reach out with any queries</h4>
+        </div>
+        <div class="card-wp" onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSf7nZ2gydg5prMpPivVvWg5NjLyf-gjInXXGNlgU4D4uykc4w/viewform'">
+            <img src="https://img.freepik.com/free-vector/customer-feedback-assessment-illustration_74855-5480.jpg?size=626&ext=jpg" alt="Card Image" class="card-img">
+            <h3 class="desc card-title">Give Feedback</h3>
+            <h4>Thank you for your valuble feedback </h4>
+        </div>
+    </div>
+    <style>
+        body {
+            min-height: 100vh;
+            background: var(--gradient);
+        }
+        
+        h1 {
+            color: white;
+        }
+        
+        h3 {
+            color: white;
+        }
+        
+        h4 {
+            font-weight: 300;
+            text-align: center;
+        }
+        
+        @media only screen and (min-width: 1000px) {
+            .cards-thin {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+    </style>
+
+
+</body>
+
+</html>

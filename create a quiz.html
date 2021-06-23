@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose your tour</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+</head>
+
+<body>
+    <h1>Create a quiz</h1>
+    <h3 class="desc">You can create a quiz for your students on the platform given below. Please mark the correct answers by writing '[C]' after the correct answer.</h3>
+    <div class="total-div">
+        <div class="question-div">
+            <input type="text" name="Question" class="question" placeholder="Question">
+            <div class="options-grid">
+                <input type="text" placeholder="Option A" id="" class="option optionA">
+                <input type="text" placeholder="Option B" id="" class="option optionB">
+                <input type="text" placeholder="Option C" id="" class="option optionC">
+                <input type="text" placeholder="Option D" id="" class="option optionD">
+            </div>
+        </div>
+
+
+    </div>
+    <button onclick="newquestion()" class="addq">+</button>
+    <button onclick="removequestion()" class="removeq">-</button>
+    <button onclick="save()" class="save">Create code</button>
+    <style>
+        body {
+            min-height: 100vh;
+            background: var(--gradient);
+        }
+        
+        h1 {
+            color: white;
+        }
+        
+        h3 {
+            color: white;
+        }
+        
+        .addq {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+        }
+        
+        .removeq {
+            position: fixed;
+            bottom: 30px;
+            left: 140px;
+        }
+        
+        .save {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+        }
+        
+        .question {
+            padding: 15px;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            width: 100%;
+        }
+        
+        .question-div {
+            width: 30vw;
+            margin-left: 35vw;
+            margin-top: 50px;
+        }
+    </style>
+    <script>
+        const questionDiv = `<div class="question-div">
+            <input type="text" name="Question" class="question" placeholder="Question">
+            <div class="options-grid">
+                <input type="text" placeholder="Option A" id="" class="option optionA">
+                <input type="text" placeholder="Option B" id="" class="option optionB">
+                <input type="text" placeholder="Option C" id="" class="option optionC">
+                <input type="text" placeholder="Option D" id="" class="option optionD">
+            </div>
+        </div>`;
+        var totalDiv = document.querySelector('.total-div')
+
+        function newquestion() {
+            totalDiv.innerHTML += questionDiv;
+        }
+
+        function removequestion() {
+            totalDiv.innerHTML -= questionDiv;
+        }
+
+        function save() {
+            alert('Succesfully saved! Your quiz code is 578965.')
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('http://fonts.cdnfonts.com/css/samarkan');
+@import url('http://db.onlinewebfonts.com/c/7e96eba370659b4e4563309dc4ebb33f?family=Samarkan');
+:root {
+    --gradient: linear-gradient(#09BFFF, #26DAD6);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 7vw;
+    padding-top: 5vh;
+}
+
+.desc {
+    font-size: 20px;
+    font-weight: 300;
+    width: 100%;
+    text-align: center;
+    padding: 3vh 10vw;
+}
+
+.cards-thin {
+    width: 100%;
+    margin-top: 5vw;
+    padding: 5vw;
+    padding-top: 0vw;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card-thin {
+    padding: 0.75em;
+    background-color: white;
+    color: black;
+    font-weight: thin;
+    border-radius: 50px;
+    font-size: 20px;
+    position: relative;
+}
+
+.card-inactive {
+    background-color: #ccc;
+}
+
+.bg {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+.card-active {
+    cursor: pointer;
+    text-align: center;
+}
+
+.card-active:hover {
+    background: black;
+    color: white;
+}
+
+.logo {
+    position: fixed;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+}
+
+.card-thick {
+    background-color: white;
+    width: 600px;
+    border-radius: 20px;
+    margin-left: calc(50% - 300px);
+    padding: 1em;
+    margin-top: 50px;
+    position: relative;
+}
+
+h2 {
+    text-align: center;
+    width: 100%;
+    margin-top: 1em;
+    text-decoration: none;
+}
+
+button {
+    padding: 0.75em 2em;
+    border: none;
+    outline: none;
+    background-color: white;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+button:hover,
+button:active {
+    background-color: black;
+    color: white;
+}
+
+button:focus {
+    border: 2px black solid;
+}
+
+.bg {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+.cards-with-pictures {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    grid-template-rows: 300px 300px 300px;
+    width: 100%;
+    padding: 50px 100px;
+    position: relative;
+}
+
+.card-img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.card-wp {
+    border-radius: 20px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.card-title {
+    font-weight: bold;
+    color: black;
+    padding: 13px 20px;
+}
+
+input,
+select {
+    padding: 0.5em 1em;
+    font-size: 15px;
+    border-radius: 50px;
+    border: 0;
+    outline: 0;
+}
+
+@media only screen and (max-width: 800px) {
+    .card-thick {
+        width: 80%;
+        margin-left: calc(10%);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 13vw;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+    .desc {
+        font-size: 15px;
+    }
+    .cards-thin {
+        padding: 10vw;
+        padding-top: 0vw;
+        grid-template-columns: 1fr;
+    }
+}

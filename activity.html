@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+</head>
+
+<body>
+    <iframe src="https://www.youtube.com/embed/d4kYor-ZF7g?rel=0&amp;" width="560" height="315" frameborder="0" allowfullscreen class="video"></iframe>
+    <div class="button-grid">
+        <button onclick="playVideo()" class="play">Play</button>
+        <button onclick="window.location.href = 'prototype.html'" class="next">Next</button>
+    </div>
+    <style>
+        html {
+            overflow: hidden;
+        }
+        
+        iframe {
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            z-index: -1;
+        }
+        
+        .button-grid {
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: 1fr 1fr;
+            width: 400px;
+            margin-left: calc(50% - 200px);
+            margin-top: 85vh;
+            position: absolute;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .button-grid {
+                grid-template-columns: 1fr;
+                width: 150px;
+                margin-left: calc(50% - 75px);
+                margin-top: 75vh;
+            }
+        }
+    </style>
+    <script>
+        function playVideo(ev) {
+            document.querySelector('.video').src += '&autoplay=1';
+            ev.preventDefault();
+        }
+    </script>
+</body>
+
+</html>

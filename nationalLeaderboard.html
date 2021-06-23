@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Leaderboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+</head>
+
+<body>
+    <img src="medal.svg" alt="Medal icon" class="medal">
+    <h1>NATIONAL LEADERBOARD</h1>
+    <div class="cards-thin">
+        <div class="card-thin card-active">Demo Name 1</div>
+        <div class="card-thin card-active">Demo Name 2</div>
+        <div class="card-thin card-active">Demo Name 3</div>
+        <div class="card-thin card-active">Demo Name 4</div>
+        <div class="card-thin card-active">Demo Name 5</div>
+    </div>
+    <button onclick="window.location.href = 'trivia-over.html'">Next</button>
+
+    <style>
+        h1 {
+            font-size: 5vw;
+            color: white;
+        }
+        
+        body {
+            background: var(--gradient);
+            min-height: 100vh;
+        }
+        
+        .medal {
+            width: 70px;
+            margin-top: 5vh;
+            margin-left: calc(50% - 35px);
+        }
+        
+        .cards-thin {
+            margin-top: 5vh;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 9vw;
+            }
+        }
+        
+        @media only screen and (min-width: 1000px) {
+            .cards-thin {
+                grid-template-columns: 1fr 1fr 1fr;
+                margin-top: 10vh;
+            }
+        }
+        
+        button {
+            margin-left: calc(50% - 129px/2);
+        }
+    </style>
+
+</body>
+
+</html>

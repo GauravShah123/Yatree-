@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join a Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+</head>
+
+<body>
+    <input type="number" name="Quiz code" id="code" placeholder="Enter Quiz Code">
+    <button onclick="next()">Join quiz</button>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #code,
+        button {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        button {
+            position: absolute;
+            top: 90vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        #code {
+            font-size: 20px;
+            padding: 20px 40px;
+        }
+    </style>
+    <script>
+        function next() {
+            var id = document.querySelector('#code').value;
+            if (id == 576345) {
+                window.location.href = 'trivia1.html';
+            } else {
+                alert('Invalid code! Please try again.');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

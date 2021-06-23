@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Stop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+
+</head>
+<h1>Sign in </h1>
+
+
+<br><br>
+
+
+<div class="inputs">
+    <div class="input-element question1">
+        <p>Name:</p>
+    </div>
+    <div class="input-element input1"><input type="text" name="Name" id="name-input" placeholder="Full Name"></div>
+    <div class="input-element question2">Email: </div>
+    <div class="input-element input2"><input type="text" name="email" id="email-input" placeholder="Email Address"></div>
+    <div class="input-element question3">Password: </div>
+    <div class="input-element input3"><input type="password" name="Password" id="password-input" placeholder="Password"></div>
+
+    <div class="input-element question4"><label for="status">Choose your status:</label></div>
+    <div class="input-element input4"><select id="status" name="status">
+        <option value="student">Student</option>
+        <option value="tourist" selected>Tourist</option>
+        
+        <option value="teacher">Teacher</option>
+        <option value="gamer">Gamer</option>
+      </select></div>
+</div>
+<button onclick='next()'>Next</button>
+<h3 style="font-weight: 300; margin-left: 30px; margin-top: 10px;">Not a user yet? <u>Sign up.</u></h3>
+
+<body>
+
+    <img src="Logo.svg" alt="Logo" class="logo">
+    <style>
+        body {
+            min-height: 100vh;
+            background: var(--gradient);
+            color: white;
+        }
+        
+        .inputs {
+            margin-left: calc(50% - 25vw);
+            width: 50vw;
+            height: 30vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 10vh;
+        }
+        
+        .input-element {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+        }
+        
+        .input-element {
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        input {
+            width: 100%;
+        }
+        
+        select {
+            width: 100%;
+        }
+        
+        button {
+            margin-left: calc(50% - 129px/2);
+            margin-top: 20vh;
+        }
+    </style>
+    <script>
+        function validateEmail(email) {
+            const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+
+        function next() {
+            var password = document.getElementById("password-input").value;
+            const email = document.getElementById("email-input").value;
+            console.log(password)
+            if (password == "yatree" && (validateEmail(email))) {
+                localStorage.setItem('Name', document.getElementById("name-input").value);
+                localStorage.setItem('Email', document.getElementById("email-input").value);
+                localStorage.setItem('Status', document.getElementById("status").value);
+                var status = localStorage.getItem('Status')
+                if (status == 'student') {
+                    window.location.href = 'tours.html';
+                } else if (status == 'teacher') {
+                    window.location.href = 'teacher-dasboard.html';
+                } else if (status == 'gamer') {
+                    window.location.href = 'custom-tour3.html';
+                } else {
+                    window.location.href = 'tours-tourist.html';
+                }
+            } else {
+                alert('Error. Please try again.')
+            }
+        }
+    </script>
+</body>
+
+</html>

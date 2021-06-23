@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This was just a taste!</title>
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>This was just a taste!</h1>
+    <h3 class="desc h3">We hope this demo helped inform you on our app! We would like to let you know that this is just the prototype. We would love to hear from you any ideas for areas of further development or scope so as to make this app idea a successful one!</h3>
+    <div class="button-grid">
+        <button onclick="window.location.href = 'https://forms.gle/fAfa3WUkmKxUMoYf9'">Give us feedback</button>
+        <button onclick="window.location.href = 'https://www.youtube.com/watch?v=J9ROYceLCzA'" class="learn">Learn more</button>
+    </div>
+    <style>
+        .h3 {
+            margin-top: 5vh;
+        }
+        
+        iframe {
+            margin-left: calc(50% - 280px);
+        }
+        
+        h1 {
+            padding-top: 25vh;
+            font-size: 5vw;
+            color: white;
+        }
+        
+        h3 {
+            color: white;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: var(--gradient);
+        }
+        
+        .button-grid {
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: 1fr 1fr;
+            width: 540px;
+            margin-left: calc(50% - 270px);
+            margin-top: 15vh;
+        }
+        
+        .learn {
+            background-color: rgba(0, 0, 0, 0);
+            border: 2px solid white;
+            color: white;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 9vw;
+            }
+            .button-grid {
+                grid-template-columns: 1fr;
+                width: 260px;
+                margin-left: calc(50% - 130px);
+                margin-top: 5vh;
+            }
+        }
+    </style>
+</body>
+
+</html>

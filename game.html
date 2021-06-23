@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="game">
+        <div class="river">
+            <div class="water"></div>
+
+            <div class="rock rock1"></div>
+            <div class="rock rock2"></div>
+            <div class="rock rock3"></div>
+            <div class="rock rock4"></div>
+            <div class="boat" id="image1" style="left: 200px; top: 50px;"></div>
+            <div class="finish-line"></div>
+
+        </div>
+    </div>
+    <div class="controls">
+        <div class="up-arrow arrow" onclick='collision($(".boat"), $(".rock1")); collision($(".boat"), $(".rock2"));collision($(".boat"), $(".rock3"));collision($(".boat"), $(".rock4"));win($(".boat"), $(".finish-line"));outside($(".boat"), $(".river"));upArrowPressed();'>Up</div>
+        <div class="left-arrow arrow" onclick='collision($(".boat"), $(".rock1"));
+            collision($(".boat"), $(".rock2"));collision($(".boat"), $(".rock3"));collision($(".boat"), $(".rock4"));win($(".boat"), $(".finish-line"));outside($(".boat"), $(".river"));leftArrowPressed();'>Left</div>
+        <div class="right-arrow arrow" onclick='collision($(".boat"), $(".rock1"));
+            collision($(".boat"), $(".rock2"));collision($(".boat"), $(".rock3"));collision($(".boat"), $(".rock4"));win($(".boat"), $(".finish-line"));outside($(".boat"), $(".river"));rightArrowPressed();'>Right</div>
+        <div class="down-arrow arrow" onclick='collision($(".boat"), $(".rock1"));
+            collision($(".boat"), $(".rock2"));collision($(".boat"), $(".rock3"));collision($(".boat"), $(".rock4"));win($(".boat"), $(".finish-line"));outside($(".boat"), $(".river"));downArrowPressed();'>Down</div>
+
+    </div>
+
+    <style>
+        body {
+            height: 100vh;
+        }
+        
+        .water {
+            height: 100vh;
+            width: 100%;
+            background-image: url('Water.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .river {
+            min-height: 100%;
+            width: 90%;
+            max-width: 400px;
+            background: linear-gradient(rgb(11, 227, 255), rgb(0, 183, 255));
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .controls {
+            position: absolute;
+            height: 20vh;
+            width: 30vh;
+            top: 80vh;
+            right: 0;
+            background-color: white;
+            border-top-left-radius: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+        
+        .arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .up-arrow,
+        .down-arrow {
+            grid-column: 1/3;
+        }
+        
+        .left-arrow,
+        .right-arrow {
+            background-color: #f2f2f2;
+        }
+        
+        .boat {
+            height: 60px;
+            width: 100px;
+            background: url('Raft.svg');
+            position: absolute;
+            z-index: 1;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        .game {
+            background-color: rgb(44, 102, 102);
+        }
+        
+        .rock {
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            border-radius: 5px;
+        }
+        
+        .rock1 {
+            top: 25%;
+            left: 70%;
+            background: url('rock.svg');
+            background-size: contain;
+        }
+        
+        .rock2 {
+            top: 56%;
+            left: 80%;
+            background: url('rock2.svg');
+            background-size: contain;
+        }
+        
+        .rock3 {
+            top: 74%;
+            left: 46%;
+            background: url('rock3.svg');
+            background-size: contain;
+        }
+        
+        .rock4 {
+            top: 40%;
+            left: 20%;
+            background: url('rock4.svg');
+            background-size: contain;
+        }
+        
+        .game {
+            height: 100vh;
+            max-width: 100vw;
+        }
+        
+        .finish-line {
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            top: calc(100% - 50px);
+            background: url('http://www.flags-and-anthems.com/media/flags/flagge-start-ziel.gif');
+            background-size: cover;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .game {
+                height: 80vh;
+                position: relative;
+            }
+        }
+    </style>
+    <script>
+        function collision($div1, $div2) {
+            var x1 = $div1.offset().left;
+            var y1 = $div1.offset().top;
+            var h1 = $div1.outerHeight(true);
+            var w1 = $div1.outerWidth(true);
+            var b1 = y1 + h1;
+            var r1 = x1 + w1;
+            var x2 = $div2.offset().left;
+            var y2 = $div2.offset().top;
+            var h2 = $div2.outerHeight(true);
+            var w2 = $div2.outerWidth(true);
+            var b2 = y2 + h2;
+            var r2 = x2 + w2;
+
+
+            if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) {
+
+            } else {
+                window.location.href = 'game-over.html'
+            };
+        }
+
+        function win($div1, $div2) {
+            var x1 = $div1.offset().left;
+            var y1 = $div1.offset().top;
+            var h1 = $div1.outerHeight(true);
+            var w1 = $div1.outerWidth(true);
+            var b1 = y1 + h1;
+            var r1 = x1 + w1;
+            var x2 = $div2.offset().left;
+            var y2 = $div2.offset().top;
+            var h2 = $div2.outerHeight(true);
+            var w2 = $div2.outerWidth(true);
+            var b2 = y2 + h2;
+            var r2 = x2 + w2;
+
+
+            if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) {
+
+            } else {
+                window.location.href = 'game-won.html'
+            };
+        }
+
+        function outside($div1, $div2) {
+            var x1 = $div1.offset().left;
+            var y1 = $div1.offset().top;
+            var h1 = $div1.outerHeight(true);
+            var w1 = $div1.outerWidth(true);
+            var b1 = y1 + h1;
+            var r1 = x1 + w1;
+            var x2 = $div2.offset().left;
+            var y2 = $div2.offset().top;
+            var h2 = $div2.outerHeight(true);
+            var w2 = $div2.outerWidth(true);
+            var b2 = y2 + h2;
+            var r2 = x2 + w2;
+
+            if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) {
+                window.location.href = 'game-over.html'
+            } else {
+
+            };
+        }
+
+
+        function leftArrowPressed() {
+            var element = document.getElementById("image1");
+            element.style.left = parseInt(element.style.left) - 20 + 'px';
+        }
+
+        function rightArrowPressed() {
+            var element = document.getElementById("image1");
+            element.style.left = parseInt(element.style.left) + 20 + 'px';
+        }
+
+        function upArrowPressed() {
+            var element = document.getElementById("image1");
+            element.style.top = parseInt(element.style.top) - 20 + 'px';
+        }
+
+        function downArrowPressed() {
+            var element = document.getElementById("image1");
+            element.style.top = parseInt(element.style.top) + 20 + 'px';
+        }
+
+        function moveSelection(evt) {
+            collision($(".boat"), $(".rock1"));
+            collision($(".boat"), $(".rock2"));
+            collision($(".boat"), $(".rock3"));
+            collision($(".boat"), $(".rock4"));
+            win($(".boat"), $(".finish-line"));
+            outside($(".boat"), $(".river"));
+            switch (evt.keyCode) {
+                case 37:
+                    leftArrowPressed();
+                    break;
+                case 39:
+                    rightArrowPressed();
+                    break;
+                case 38:
+                    upArrowPressed();
+                    break;
+                case 40:
+                    downArrowPressed();
+                    break;
+            }
+        };
+
+        var x = $(".boat").offset();
+
+        window.addEventListener('keydown', moveSelection);
+        console.log(x.top)
+    </script>
+</body>
+
+</html>

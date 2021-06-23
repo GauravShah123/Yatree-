@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Trivia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+</head>
+
+<body>
+    <img src="bg.svg" alt="bg" class="bg">
+    <h1>Gamer's Console</h1>
+
+    <div class="cards-with-pictures">
+        <div class="card-wp" onclick="window.location.href = 'game1.html'">
+            <img src="archery1.jpeg" alt="Card Image" class="card-img">
+            <h3 class="desc card-title">Archery 1</h3>
+            <h4>Test your aim to win the game</h4>
+        </div>
+        <div class="card-wp" onclick="window.location.href = 'game2.html'">
+            <img src="archery2.jpeg" alt="Card Image" class="card-img">
+            <h3 class="desc card-title">Archery 2</h3>
+            <h4>Enjoy this thrilling archery game!</h4>
+        </div>
+        <div class="card-wp" onclick="window.location.href = 'game2.html'">
+            <img src="Biking.jpeg" alt="Card Image" class="card-img">
+            <h3 class="desc card-title">Biking</h3>
+            <h4>Enjoy this thrilling biking game!</h4>
+        </div>
+        <div class="card-wp" onclick="window.location.href = 'game2.html'">
+            <img src="Biking.jpeg" alt="Card Image" class="card-img">
+            <h3 class="desc card-title">River Rafting</h3>
+            <h4>Enjoy this thrilling river rafting game!</h4>
+        </div>
+        <div class="card-wp" onclick="window.location.href = 'game2.html'">
+            <img src="mountain.jpeg" alt="Card Image" class="card-img">
+            <h3 class="desc card-title">Mountain Climbing</h3>
+            <h4>Enjoy this thrilling mountain climbing game!</h4>
+        </div>
+    </div>
+    <style>
+        body {
+            min-height: 100vh;
+            background: var(--gradient);
+        }
+        
+        h1 {
+            color: white;
+        }
+        
+        h3 {
+            color: white;
+        }
+        
+        h4 {
+            font-weight: 300;
+            text-align: center;
+        }
+        
+        .cards-thin {
+            grid-template-rows: 250px;
+        }
+        
+        @media only screen and (min-width: 1000px) {
+            .cards-thin {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+
+
+</body>
+
+</html>

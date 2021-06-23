@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Did you know?</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+</head>
+
+<body>
+
+    <img src="bg.svg" alt="background" class="bg">
+
+    <img src="dyk.svg" alt="Did you know?" class="dyk">
+
+    <div class="card-thick">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRTUcV49pu2dTHzZZ_Ze70UbXojsNEhLiThA&usqp=CAU" alt="Fun Fact Image" class="dyk-img">
+        <h2 class="dyk-title">Indian Astronomy Center</h2>
+        <p class="fact desc dyk-content">Its high altitude and clear skies make Ladakh an important Astronomy Centre in India.</p>
+        <div class="card-btns">
+            <span class="previous card-btn" onclick="previous()">Previous</span>
+            <span class="next card-btn" onclick="next()">Next</span>
+        </div>
+    </div>
+    <div class="button-grid">
+        <button onclick="window.location.href = 'didyouknow2.html';" class="trivia-btn">See Videos</button>
+        <button onclick="window.location.href = 'trivia1.html';" class="trivia-btn">Play Trivia</button>
+    </div>
+    <style>
+        html {
+            background: var(--gradient);
+            background-attachment: fixed;
+        }
+        
+        .dyk {
+            width: 250px;
+            margin-left: calc(50% - 125px);
+            margin-top: 50px;
+        }
+        
+        .bg {
+            position: absolute;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+        }
+        
+        .button-grid {
+            display: grid;
+            grid-gap: 30px;
+            grid-template-columns: 1fr 1fr;
+            width: 500px;
+            margin-left: calc(50% - 250px);
+            margin-top: 10vh;
+            margin-bottom: 7vh;
+            height: 54px;
+        }
+        
+        .button {
+            width: 100%;
+            margin: 0;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .button-grid {
+                grid-template-columns: 1fr;
+                width: 200px;
+                margin-left: calc(50% - 100px);
+                margin-top: 10vh;
+                grid-gap: 20px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .dyk {
+                width: 200px;
+                margin-left: calc(50% - 100px);
+            }
+        }
+        
+        .dyk-img {
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+            border-radius: 60px;
+            margin-left: calc(50% - 50px);
+        }
+        
+        .fact {
+            padding: 1.5em 0.5em;
+        }
+        
+        .card-btns {
+            position: absolute;
+            top: calc(100% + 10px);
+            width: calc(100% - 2em);
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        
+        .card-btn {
+            cursor: pointer;
+        }
+        
+        .next {
+            float: right;
+        }
+    </style>
+    <script>
+        var factNumber = 0;
+        var images = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRTUcV49pu2dTHzZZ_Ze70UbXojsNEhLiThA&usqp=CAU', 'https://th.bing.com/th/id/OIP.6mhbE1Yg7bUb50IVMjEcBgHaE7?w=246&h=180&c=7&o=5&dpr=1.5&pid=1.7', 'https://www.bing.com/th?id=OIP.vjNxzLyDHfyZ-l9SZuozCwHaE8&w=168&h=110&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2', 'https://www.bing.com/th?id=OIP.8ziqCkQszaQjuWmmoJZCCwHaEn&w=182&h=110&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2'];
+        var titles = ['Indian Astronomy Center', 'Highest Bridge in the World', 'Highest Livable Region', 'Adventure and Spiritual Destination'];
+        var content = ['Its high altitude and clear skies make Ladakh an important Astronomy Centre in India.', 'The highest bridge in the world can be found in the Ladakh valley between the Dras and Suru rivers in the Himalayan mountains.', 'Ladakh is the highest livable region with a settlement. It currentloy has a population of over 274,000 people.', 'Ladakh is an adventure and spiritual destination, which is attracting tourists with charming Buddhism culture.']
+
+        var imageHolder = document.querySelector('.dyk-img');
+        var titleHolder = document.querySelector('.dyk-title');
+        var contentHolder = document.querySelector('.dyk-content');
+        console.log(contentHolder);
+
+        function previous() {
+            if (factNumber != 0) {
+                factNumber -= 1;
+                imageHolder.src = images[factNumber];
+                titleHolder.innerHTML = titles[factNumber];
+                contentHolder.innerHTML = content[factNumber];
+
+            }
+        }
+
+        function next() {
+            if (factNumber != 3) {
+                factNumber += 1;
+                imageHolder.src = images[factNumber];
+                titleHolder.innerHTML = titles[factNumber];
+                contentHolder.innerHTML = content[factNumber];
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correct</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+</head>
+
+<body>
+    <script>
+        let currentPoints = localStorage.getItem('currentPoints');
+        let totalPoints = localStorage.getItem('totalPoints');
+        console.log(totalPoints);
+    </script>
+    <h3 class="desc totalPointTotal">Total Score: </h3>
+    <h1>That's right!</h1>
+    <button onclick="nextq()" class="next-btn">Next Question</button>
+    <span class="points">
+        <span class="point-total" id="point">Hello</span>
+    <span class="points-icon ">&#128176;</span>
+    </span>
+    <img src="https://i.pinimg.com/originals/7f/3a/68/7f3a68fe9ae08dfcfb26a0863a20d375.gif" alt="Confetti" class="confetti">
+    <style>
+        html {
+            overflow: hidden;
+        }
+        
+        .points {
+            padding: 5px 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            font-size: 25px;
+        }
+        
+        h1 {
+            padding: 0;
+            margin-top: 30vh;
+            background-color: white;
+        }
+        
+        button {
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 5vh;
+        }
+        
+        .confetti {
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 100vh;
+        }
+    </style>
+    <script>
+        document.getElementById('point').innerText = '+ ' + currentPoints;
+        console.log('hi');
+        let questionNumber = localStorage.getItem('questionNumber');
+        console.log(questionNumber);
+        document.querySelector('.totalPointTotal').innerHTML = 'Total Score: ' + totalPoints;
+
+        function nextq() {
+            if (questionNumber <= 3) {
+                window.location.href = 'trivia' + questionNumber + '.html';
+            } else {
+                window.location.href = 'nationalLeaderboard.html'
+            }
+        }
+    </script>
+</body>
+
+</html>
