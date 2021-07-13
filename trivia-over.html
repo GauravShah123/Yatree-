@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceed to activity</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+</head>
+
+<body>
+    <h1>We hope you had fun in Ladakh!</h1>
+    <h3 class="desc">Before you leave, experience some of the thrilling tourist activities from the station.</h3>
+    <div class="button-grid">
+        <button onclick="window.location.href = 'game.html'">Go to activity</button>
+        <button onclick="window.location.href = 'prototype.html'">Skip</button>
+    </div>
+    <style>
+        h1 {
+            font-size: 5vw;
+            padding-top: 15vh;
+        }
+        
+        body {
+            min-height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1542003488933-7cfa7453807a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1789&q=80');
+        }
+        
+        .button-grid {
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: 1fr 1fr;
+            width: 500px;
+            margin-left: calc(50% - 250px);
+            margin-top: 20vh;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 9vw;
+            }
+            .button-grid {
+                grid-template-columns: 1fr;
+                width: 230px;
+                margin-left: calc(50% - 115px);
+            }
+        }
+    </style>
+</body>
+
+</html>
